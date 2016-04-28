@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tns:Airlines
+xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+xmlns:tns="http://www.example.org/Airlines"
+xsi:schemaLocation="http://www.example.org/Airlines Airlines.xsd">
+	
+	<Airline name="airline1" counrty="England">
+		<Schedule>
+			<FlightSegment DepartureDateTime="2016-03-08T06:10:00.000" ArrivalDateTime="2016-03-08T07:16:00.000" FlightNumber="2818">
+				<DepartureAirport LocationCode="JFK" CodeContext="IATA"/>
+				<ArrivalAirport LocationCode="BOS" CodeContext="IATA"/>
+				<OperatingAirline Code="B6"/>
+			</FlightSegment>	
+			<FlightSegment DepartureDateTime="2016-03-18T06:15:00.000" ArrivalDateTime="2016-03-18T07:16:00.000" FlightNumber="4858">
+				<DepartureAirport LocationCode="JDK" CodeContext="TDP"/>
+				<ArrivalAirport LocationCode="BOS" CodeContext="TDP"/>
+				<OperatingAirline Code="ADT"/>
+			</FlightSegment>
+		</Schedule>
+	</Airline>
+	<Airline name="airline2" counrty="American">
+		<Schedule>
+			<FlightSegment DepartureDateTime="2016-03-18T06:15:00.000" ArrivalDateTime="2016-03-18T07:16:00.000" FlightNumber="2858">
+				<DepartureAirport LocationCode="JDK" CodeContext="TDP"/>
+				<ArrivalAirport LocationCode="BOS" CodeContext="TDP"/>
+				<OperatingAirline Code="ADT"/>
+			</FlightSegment>			
+		</Schedule>
+	</Airline>
+</tns:Airlines>

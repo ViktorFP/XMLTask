@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema"
+targetNamespace="http://www.example.org/Airlines" 
+xmlns:tns="http://www.example.org/Airlines">
+	
+	<element name="Airlines">
+		<complexType>
+			<sequence>
+				<element name="Airline" type="tns:Airline"
+				minOccurs="1" maxOccurs="unbounded"/>
+			</sequence>			
+		</complexType>
+	</element>
+	
+	<complexType name="Airline">
+		<sequence>
+			<element name="Schedule" type="tns:Schedule"/>
+		</sequence>
+		<attribute name="name" type="string" use="required"/>
+		<attribute name="counrty" type="string" use="required"/>
+	</complexType>
+	
+	<complexType name="Schedule">
+		<sequence>
+			<element name="FlightSegment" type="tns:FlightSegment"
+			minOccurs="1" maxOccurs="unbounded"/>
+		</sequence>
+	</complexType>
+	
+	<complexType name="FlightSegment">
+		<sequence>
+			<element name="DepartureAirport" type="tns:DepartureAirport"/>
+			<element name="ArrivalAirport" type="tns:ArrivalAirport"/>
+			<element name="OperatingAirline" type="tns:OperatingAirline"/>
+		</sequence>		
+		<attribute name="DepartureDateTime" type="dateTime" use="required"/>
+		<attribute name="ArrivalDateTime" type="dateTime" use="required"/>
+		<attribute name="FlightNumber" type="string" use="required"/>
+	</complexType>
+	<complexType name="DepartureAirport">
+		<attribute name="LocationCode" type="string" use="required"/>
+		<attribute name="CodeContext" type="string" use="required"/>
+	</complexType>
+	<complexType name="ArrivalAirport">
+		<attribute name="LocationCode" type="string" use="required"/>
+		<attribute name="CodeContext" type="string" use="required"/>
+	</complexType>
+	<complexType name="OperatingAirline">
+		<attribute name="Code" type="string" use="required"/>
+	</complexType>
+</schema>
